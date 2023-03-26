@@ -1,0 +1,8 @@
+[win]
+    winserver ansible_host=94.228.117.222 ansible_ssh_port=5986 ansible_user=Administrator ansible_password=fXaV5xtL111 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
+
+
+[linux]
+	81.200.153.244
+	[linux:vars]
+	ansible_ssh_common_args="-o StrictHostKeyChecking=no"

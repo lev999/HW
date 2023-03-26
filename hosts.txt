@@ -1,9 +1,0 @@
-[win]
-	94.228.117.222
-	[win:vars]
-	ansible_ssh_common_args="-o StrictHostKeyChecking=no"
-
-[linux]
-	81.200.153.244
-	[linux:vars]
-	ansible_ssh_common_args="-o StrictHostKeyChecking=no"
