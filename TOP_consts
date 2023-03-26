@@ -1,0 +1,11 @@
+INTERVAL=5
+
+MAINTENANCE_FILE=/tmp/maintenance.txt
+
+LOG_FILE=my_file.csv
+CSV_HEADERS="Date,Message"
+DATE_FORMAT="%H-%M-%S"
+
+RUNNING_MSG="Top is running"
+MAINTENANCE_MSG="We are under maintenance mode!"
+WAS_STARTED_MSG="Top was started"
