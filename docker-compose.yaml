@@ -1,0 +1,14 @@
+version: "3.9"
+services:    
+  ansible:
+    container_name: ansible
+    build: 
+        dockerfile: ./DockerfileAnsible
+    image: flightopshub/ansible  
+    volumes:
+      - ./share:/share    
+#      - /home/ubuntu/.ssh/id_rsa.pub:/home/id_rsa.pub    
+#      - ./HTTPS-certs/:/HTTPS-certs       
+    stdin_open: true # docker run -i
+    tty: true        # docker run -
+    entrypoint: /bin/sh 
