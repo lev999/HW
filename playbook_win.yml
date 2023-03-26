@@ -1,0 +1,37 @@
+- name: "Playbook for Home work"
+  hosts: win
+
+  tasks: 
+
+      - name: Install IIS
+        win_feature:
+            name: Web-Server
+            state: present
+
+      - name: Configure IIS
+        win_iis_website:
+            name: TestWebsite
+            state: started
+            physical_path: C:\inetpub\wwwroot\TestWebsite
+            port: 80
+            application_pool: DefaultAppPool    
+    
+      - name: Create directory for TestWebsite
+        win_file:
+            path: C:\inetpub\wwwroot\TestWebsite
+            state: directory
+
+      - name: Copy files for TestWebsite
+        win_copy:
+            src: /share/test.txt
+            dest: C:\inetpub\wwwroot\TestWebsite
+
+      - name: Recycle application pool
+        win_iis_application_pool:
+            name: DefaultAppPool
+            state: restarted
+            
+      - name: "copy file.txt"
+        copy:
+            src: /share/test.txt
+            dest: /root/test.txt            

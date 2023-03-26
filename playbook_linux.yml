@@ -1,0 +1,26 @@
+- name: "Playbook for Home work"
+  hosts: linux
+
+  tasks: 
+
+     - name: Install Apache
+       package:
+            name: httpd
+            state: present
+
+     - name: Replace Listen directive in httpd.conf
+       replace:
+            path: /etc/httpd/conf/httpd.conf
+            regexp: 'Listen 80'
+            replace: 'Listen 8080'
+
+
+     - name: "copy file.txt"
+       become: yes
+       become_user: root
+       copy:
+            src: /share/test.txt
+            dest: /root/test.txt
+            owner: root
+            group: root
+            mode: '777'
