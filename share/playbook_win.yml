@@ -26,10 +26,10 @@
             src: /share/test.txt
             dest: C:\inetpub\wwwroot\TestWebsite
 
-#      - name: Recycle application pool
-#        win_iis_application_pool:
-#            name: DefaultAppPool
-#            state: restarted
+      - name: Recycle application pool
+        win_iis_application_pool:
+            name: DefaultAppPool
+            state: restarted
             
       - name: "copy file.txt"
         copy:
